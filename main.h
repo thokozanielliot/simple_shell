@@ -1,6 +1,8 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
+#define MAX_BUFFER_SIZE 1024
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -39,5 +41,7 @@ char *get_env(char *name);
 
 /** Builtin functions **/
 void exit_shell(char **argv);
+void print_env(void);
+int change_dir(const char *path);
 
 #endif

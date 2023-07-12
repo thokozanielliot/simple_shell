@@ -63,7 +63,7 @@ char *get_path(char *cmd)
 		return (NULL);
 	}
 	free(path);
-	return(NULL);
+	return (NULL);
 }
 
 /**
@@ -85,4 +85,39 @@ char *get_env(char *name)
 		i++;
 	}
 	return (env);
+}
+
+/**
+ * change_dir - change directory
+ * @path: Path 
+ *
+ * Return: 0 on SUCCESS
+ */
+int change_dir(const char *path)
+{
+	char cwd[MAX_BUFFER_SIZE], *o_dir;
+
+	o_dir = getenv("OLDPWD");
+	if (o_dir == NULL)
+	{
+		fprintf(stderr, "cd: OLDPWD not set \n");
+		return (-1);
+		if (chdir(o_dir) != 0)
+		{
+			perror("cd: ");
+			return (-1);
+		}
+		fprintf(stderr, "%s\n", o_dir);
+	}
+	else
+	{
+		if (chdir(path) != 0)
+		{
+			perror("cd: ");
+			return (-1);
+		}
+		fprintf(stderr, "%s\n", getcwd(cwd, sizeof(cwd)));
+	}
+	setenv("PWD", getcwd(cwd, sizeof(cwd)), 1);
+	return (0);
 }

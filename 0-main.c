@@ -27,6 +27,7 @@ int main(int ac, char **av)
 			exit(EXIT_SUCCESS);
 		}
 		argv = parser(buffer);
+		exit_shell(argv);
 		child_pid = fork();
 		if (child_pid  == 0)
 		{
@@ -38,6 +39,42 @@ int main(int ac, char **av)
 		free(argv);
 	}
 	return (0);
+}
+
+/**
+ * exit_shell - Exits the shell loop
+ * @argv: arguement vector
+ *
+ * Return: No return
+ */
+void exit_shell(char **argv)
+{
+	if (_strcmp(argv[0], "exit") == 0)
+	{
+		free(argv);
+		exit(EXIT_SUCCESS);
+	}
+	if (_strcmp(argv[0], "env") == 0)
+		print_env();
+	if (_strcmp(argv[0], "cd") == 0)
+		change_dir(argv[1]);
+}
+
+/**
+ * print_env - Print environment
+ *
+ * Return: No return
+ */
+void print_env(void)
+{
+	int i = 0;
+
+	while (environ[i] != NULL)
+	{
+		_puts(environ[i]);
+		_putchar('\n');
+		i++;
+	}
 }
 
 /**
