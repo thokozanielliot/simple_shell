@@ -10,6 +10,9 @@
 #include <sys/stat.h>
 #include <signal.h>
 
+/** External environment **/
+extern char **environ;
+
 /** Print function **/
 int _putchar(char c);
 void _puts(char *str);
@@ -23,8 +26,14 @@ int byte_count(char *s);
 /** String functions **/
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
+int _strncmp(const char *str1, const char *str2, size_t n);
+char *_strcat(char *dest, char *src);
 
 /** Execute command **/
 void execmd(char **av, const char *en);
+
+/** Get Path of command **/
+char *get_path(char *cmd);
+char *get_env(char *name);
 
 #endif

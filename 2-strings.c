@@ -84,4 +84,33 @@ int _strlen(char *s)
 	return (count);
 }
 
+/**
+ * _strncmp - compares two strings for the first n bytes
+ * @str1: first string
+ * @str2: second string
+ * @n: bytes to compare
+ *
+ * Return: 0 if equal or less than or greator than 0 if unequal
+ */
+int _strncmp(const char *str1, const char *str2, size_t n)
+{
+	int s1, s2;
+
+	while (*str1 && *str2 && (*str1 == *str2) && n)
+	{
+		n--;
+		str1++;
+		str2++;
+	}
+
+	s1 = *str1 + '0';
+	s2 = *str2 + '0';
+
+	if (n == 0)
+	{
+		return (0);
+	}
+
+	return (s1 - s2);
+}
 
