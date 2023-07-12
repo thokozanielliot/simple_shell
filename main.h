@@ -28,6 +28,7 @@ int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
 int _strncmp(const char *str1, const char *str2, size_t n);
 char *_strcat(char *dest, char *src);
+int _strcmp(char *s1, char *s2);
 
 /** Execute command **/
 void execmd(char **av, const char *en);
@@ -35,5 +36,8 @@ void execmd(char **av, const char *en);
 /** Get Path of command **/
 char *get_path(char *cmd);
 char *get_env(char *name);
+
+/** Builtin functions **/
+void exit_shell(char **argv);
 
 #endif
