@@ -31,6 +31,9 @@ char *_strcpy(char *dest, char *src);
 int _strncmp(const char *str1, const char *str2, size_t n);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
+char *con_str(char *str1, char *str2, char *p, int c1, int c2);
+char *str_concat(char *str1, char *str2);
+char *con_str(char *str1, char *str2, char *p, int c1, int c2);
 
 /** Execute command **/
 void execmd(char **av, const char *en);
@@ -43,5 +46,6 @@ char *get_env(char *name);
 void exit_shell(char **argv);
 void print_env(void);
 int change_dir(const char *path);
+int new_env(int m, char *sname, char *tmp, char *value)
 
 #endif

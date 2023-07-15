@@ -121,3 +121,33 @@ int change_dir(const char *path)
 	setenv("PWD", getcwd(cwd, sizeof(cwd)), 1);
 	return (0);
 }
+
+/**
+ * new_env - make new environ
+ * @m: index
+ * @sname: name
+ * @tmp: temporary
+ * @value: value
+ *
+ * Return: 0 on success 1 on failure
+ */
+int new_env(int m, char *sname, char *tmp, char *value)
+{
+	char **new_environ;
+
+	new_environ = malloc((m + 2) * sizeof(char *));
+	if (!new_environ)
+		return (1);
+	for (m = 0; environ[m]; m++)
+		new_environ[m] = environ[m];
+	new_environ[m] = malloc(_strlen(name) + _strlen(value) + 2);
+	if (!new_environ[m])
+		return (1);
+	tmp = str_concat(sname, "=");
+	new_environ[m] = str_concat(tmp, value);
+	free(tmp);
+	new_environ[m + 1] = NULL;
+	environ = new_environ;
+
+	return (0);
+}
