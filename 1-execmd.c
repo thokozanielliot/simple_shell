@@ -128,7 +128,6 @@ int change_dir(const char *path)
  * @sname: name
  * @tmp: temporary
  * @value: value
- *
  * Return: 0 on success 1 on failure
  */
 int new_env(int m, char *sname, char *tmp, char *value)
@@ -140,7 +139,7 @@ int new_env(int m, char *sname, char *tmp, char *value)
 		return (1);
 	for (m = 0; environ[m]; m++)
 		new_environ[m] = environ[m];
-	new_environ[m] = malloc(_strlen(name) + _strlen(value) + 2);
+	new_environ[m] = malloc(_strlen(sname) + _strlen(value) + 2);
 	if (!new_environ[m])
 		return (1);
 	tmp = str_concat(sname, "=");

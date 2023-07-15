@@ -46,6 +46,6 @@ char *get_env(char *name);
 void exit_shell(char **argv);
 void print_env(void);
 int change_dir(const char *path);
-int new_env(int m, char *sname, char *tmp, char *value)
+int new_env(int m, char *sname, char *tmp, char *value);
 
 #endif

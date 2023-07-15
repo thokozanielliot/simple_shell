@@ -64,7 +64,7 @@ char *con_str(char *str1, char *str2, char *p, int c1, int c2)
 
 	while (str1[m])
 	{
-		p[m] = s1[m];
+		p[m] = str1[m];
 		m++;
 	}
 
