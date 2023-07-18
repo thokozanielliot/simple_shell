@@ -47,5 +47,9 @@ void exit_shell(char **argv);
 void print_env(void);
 int change_dir(const char *path);
 int new_env(int m, char *sname, char *tmp, char *value);
+int unset_env(char **args);
+int set_env(char **args);
+char *read_buffer(int fd);
+char *own_getline(int fd);
 
 #endif
