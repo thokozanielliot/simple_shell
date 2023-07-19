@@ -7,6 +7,7 @@
  *
  * Return: 0 always
  */
+int c;
 int main(int ac, char **av)
 {
 	char *buffer = NULL, **argv;
@@ -49,6 +50,7 @@ int main(int ac, char **av)
  */
 void exit_shell(char **argv)
 {
+
 	if (_strcmp(argv[0], "exit") == 0)
 	{
 		free(argv);
@@ -58,6 +60,19 @@ void exit_shell(char **argv)
 		print_env();
 	if (_strcmp(argv[0], "cd") == 0)
 		change_dir(argv[1]);
+	/**{
+		child_pid = fork();
+		if (child_pid == 0)
+		{
+			change_dir(argv[1]);
+			exit(0);
+		}
+		c = 1;
+	}**/
+	if (_strcmp(argv[0], "setenv") == 0)
+		set_env(argv);
+	if (_strcmp(argv[0], "unsetenv") == 0)
+		unset_env(argv);
 }
 
 /**

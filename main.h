@@ -12,8 +12,9 @@
 #include <sys/stat.h>
 #include <signal.h>
 
-/** External environment **/
+/** External variables **/
 extern char **environ;
+extern int c;
 
 /** Print function **/
 int _putchar(char c);
