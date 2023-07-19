@@ -2,6 +2,8 @@
 /**
  * set_env - sets env
  * @args: arguments
+ *
+ * Return: 0 on success
  */
 int set_env(char **args)
 {

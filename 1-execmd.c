@@ -89,7 +89,8 @@ char *get_env(char *name)
 
 /**
  * change_dir - change directory
- * @path: Path 
+ * @path: Path
+ *
  *
  * Return: 0 on SUCCESS
  */
