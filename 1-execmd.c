@@ -10,13 +10,31 @@
 void execmd(char **av, const char *en)
 {
 	char *cmd = NULL, *act_cmd = NULL;
+	char ar[5][8] = {"exit", "cd", "env", "setenv", "unsetenv"};
+	pid_t child_pid;
+	int status, i;
 
 	if (av)
 	{
 		cmd = av[0];
 		act_cmd = get_path(cmd);
-		if (execve(act_cmd, av, environ) == -1)
-			perror(en);
+		for (i = 0; i < 5; i++)
+		{
+			if (_strcmp(ar[i], cmd) == 0)
+			{
+				exit_shell(av);
+				return;
+			}
+		}
+		child_pid = fork();
+		if (child_pid == 0)
+		{
+			if (execve(act_cmd, av, environ) == -1)
+				perror(en);
+			exit(0);
+		}
+		else
+			wait(&status);
 	}
 }
 
