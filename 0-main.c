@@ -26,7 +26,7 @@ int main(int ac, char **av)
 		}
 		argv = parser(buffer);
 		execmd(argv, av[0]);
-		free_malloc(argv);
+		free(argv);
 	}
 	return (0);
 }
