@@ -53,4 +53,7 @@ int set_env(char **args);
 char *read_buffer(int fd);
 char *own_getline(int fd);
 
+/** Free memory **/
+void free_malloc(char **str);
+
 #endif

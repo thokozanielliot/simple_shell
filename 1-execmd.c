@@ -66,21 +66,21 @@ char *get_path(char *cmd)
 			_strcat(file_path, "\0");
 			if (stat(file_path, &buffer) == 0)
 			{
-				free(path_copy);
+				free_malloc(path_copy);
 				return (file_path);
 			}
 			else
 			{
-				free(file_path);
+				free_malloc(file_path);
 				path_tok = strtok(NULL, ":");
 			}
 		}
-		free(path_copy);
+		free_malloc(path_copy);
 		if (stat(cmd, &buffer) == 0)
 			return (cmd);
 		return (NULL);
 	}
-	free(path);
+	free_malloc(path);
 	return (NULL);
 }
 
@@ -163,7 +163,7 @@ int new_env(int m, char *sname, char *tmp, char *value)
 		return (1);
 	tmp = str_concat(sname, "=");
 	new_environ[m] = str_concat(tmp, value);
-	free(tmp);
+	free_malloc(tmp);
 	new_environ[m + 1] = NULL;
 	environ = new_environ;
 

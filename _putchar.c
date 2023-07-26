@@ -27,3 +27,19 @@ void _puts(char *str)
 	}
 }
 
+/**
+ * free_malloc - free allocated memory
+ *
+ * @str: string
+ * Return: no return
+ */
+void free_malloc(char **str)
+{
+	char **mem = str;
+
+	if (!str)
+		return;
+	while (*str)
+		free(*str++);
+	free(mem);
+}
