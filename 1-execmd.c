@@ -54,6 +54,7 @@ char *get_path(char *cmd)
 	if (path)
 	{
 		path_copy = strdup(path);
+		free(path_copy);
 		cmd_len = _strlen(cmd);
 		path_tok = strtok(path_copy, ":");
 		while (path_tok != NULL)
@@ -80,7 +81,6 @@ char *get_path(char *cmd)
 			return (cmd);
 		return (NULL);
 	}
-	free(path);
 	return (NULL);
 }
 
