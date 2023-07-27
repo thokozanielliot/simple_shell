@@ -109,8 +109,11 @@ char **parser(char *str)
 	int i, no_bytes = byte_count(str);
 
 	av = malloc(sizeof(av) * (no_bytes + 1));
-	if (!av)
+	if (av)
+	{
+		free(av);
 		return (NULL);
+	}
 	token = strtok(str, delim);
 	for (i = 0; token != NULL; i++)
 	{
@@ -118,6 +121,7 @@ char **parser(char *str)
 		_strcpy(av[i], token);
 		token = strtok(NULL, delim);
 	}
+
 	av[i] = NULL;
 	return (av);
 }

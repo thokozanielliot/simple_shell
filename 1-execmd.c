@@ -51,7 +51,7 @@ char *get_path(char *cmd)
 	struct stat buffer;
 
 	path = get_env("PATH");
-	if (path)
+	if (!path)
 	{
 		path_copy = strdup(path);
 		free(path_copy);
