@@ -1,6 +1,5 @@
-#include "shell.h"
-
-/**
+#include "main.h"
+/*
  * get_environ - will return  string array clone  of our environ
  * @info: The structure containing a potential arguments
  * Return: Always 0
