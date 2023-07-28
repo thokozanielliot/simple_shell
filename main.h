@@ -112,6 +112,7 @@ typedef struct builtin
 /* shloop.c */
 int loop_shell(info_t *, char **);
 int find_builtin(info_t *);
+int hsh(info_t *info, char **av);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
