@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * _memset - fills memory
@@ -20,7 +20,7 @@ char *_memset(char *s, char b, unsigned int n)
  * ffree - frees a string
  * @pp: string
  */
-void ffree(char **pp)
+void ffrees(char **pp)
 {
 	char **a = pp;
 
