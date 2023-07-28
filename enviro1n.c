@@ -1,4 +1,4 @@
-#include "mainl.h"
+#include "main.h"
 
 /**
  * _myenv - It prints the current environ
