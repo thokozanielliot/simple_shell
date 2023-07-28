@@ -43,7 +43,7 @@ extern char **environ;
  * @str: string
  * @next: next node
  */
-typedef struct lists_t
+typedef struct liststr
 {
 	int num;
 	char *str;
