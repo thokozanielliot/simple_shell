@@ -110,7 +110,7 @@ typedef struct builtin
 } builtin_arr;
 
 /* shloop.c */
-int loop_shel(info_t *, char **);
+int loop_shell(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
