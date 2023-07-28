@@ -43,7 +43,7 @@ extern char **environ;
  * @str: string
  * @next: next node
  */
-typedef struct liststr
+typedef struct lists_t
 {
 	int num;
 	char *str;
@@ -110,7 +110,7 @@ typedef struct builtin
 } builtin_arr;
 
 /* shloop.c */
-int hsh(info_t *, char **);
+int loop_shel(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
