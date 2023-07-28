@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * get_history_file - This gets the history file
