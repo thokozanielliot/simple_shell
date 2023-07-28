@@ -107,8 +107,7 @@ typedef struct builtin
 {
 	char *type;
 	int (*func)(info_t *);
-} builtin_table;
-
+} builtin_arr;
 
 /* shloop.c */
 int hsh(info_t *, char **);
