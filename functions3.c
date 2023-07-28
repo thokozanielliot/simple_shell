@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "maim.h"
 
 /**
  * _erratoi - changes a string into an integer
